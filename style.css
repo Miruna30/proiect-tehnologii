@@ -1,0 +1,250 @@
+/* AutoJurnal: stilurile mockup-ului (Etapa 1) */
+
+* { box-sizing: border-box; }
+
+/* 4.1 Variabilele de culoare: toate culorile sunt definite doar aici */
+:root {
+  --bg: #f3f5f8;             /* fundalul paginii */
+  --card: #ffffff;           /* fundalul panourilor */
+  --text: #1c2430;
+  --muted: #6b7280;
+  --accent: #1f4fd1;         /* albastru „service” */
+  --accent-dark: #173c9f;
+  --accent-soft: #e6edfd;
+  --border: #e3e7ee;
+  --on-accent: #ffffff;      /* textul de pe fundalul de accent */
+  --shadow: 0 1px 3px rgba(16, 24, 40, 0.08);
+
+  /* câte o culoare pentru fiecare tip de intervenție */
+  --revizie: #15803d;
+  --reparatie: #c2410c;
+  --diagnoza: #a16207;
+  --inspectie: #6d28d9;
+
+  /* culorile stărilor */
+  --programata: #1f4fd1;
+  --efectuata: #15803d;
+  --danger: #dc2626;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* 4.2 Antetul */
+.app-header {
+  background: var(--accent);
+  color: var(--on-accent);
+  text-align: center;
+  padding: 32px 16px 28px;
+}
+
+.app-header h1 {
+  margin: 0 0 4px;
+  font-size: 2rem;
+  letter-spacing: 0.5px;
+}
+
+.app-header p { margin: 4px 0; }
+
+.app-count {
+  display: inline-block;
+  margin-top: 10px !important;
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: var(--accent-dark);
+  font-weight: 600;
+}
+
+/* 4.3 Cele două coloane (Grid) */
+.container {
+  max-width: 1040px;
+  margin: 24px auto;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* 4.4 Panourile */
+.panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+.panel h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+/* 4.5 Formularul (Flexbox, pe verticală) */
+.interventie-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.interventie-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* două câmpuri scurte pe același rând */
+.form-row {
+  display: flex;
+  gap: 12px;
+}
+
+.form-row label { flex: 1; min-width: 0; }
+
+.interventie-form input,
+.interventie-form select {
+  font: inherit;
+  font-weight: 400;
+  padding: 9px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--text);
+  width: 100%;
+}
+
+.interventie-form button {
+  font: inherit;
+  font-weight: 600;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--on-accent);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.interventie-form button:hover { background: var(--accent-dark); }
+
+/* 4.6 Lista și cardul (Flexbox) */
+.interventie-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.interventie-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--programata);
+  border-radius: 10px;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.interventie-card:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.interventie-card h3 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+}
+
+.meta {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.status {
+  flex-shrink: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--programata);
+}
+
+/* 4.7 Etichetele colorate */
+.badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--on-accent);
+}
+
+.badge-revizie { background: var(--revizie); }
+.badge-reparatie { background: var(--reparatie); }
+.badge-diagnoza { background: var(--diagnoza); }
+.badge-inspectie { background: var(--inspectie); }
+
+/* 4.8 Intervenția efectuată: titlul tăiat și gri */
+.interventie-card.done { border-left-color: var(--efectuata); }
+
+.interventie-card.done h3 {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.interventie-card.done .status { color: var(--efectuata); }
+
+/* mesajul pentru lista goală (folosit din Etapa 4) */
+.empty {
+  color: var(--muted);
+  text-align: center;
+  padding: 24px 0;
+}
+
+/* Subsolul */
+.app-footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+  padding: 16px 0 32px;
+}
+
+/* Pasul 5: focus vizibil la navigarea cu tastatura */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Pasul 5: tema întunecată redefinește doar variabilele */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f141c;
+    --card: #182030;
+    --text: #e5e9f0;
+    --muted: #9aa4b2;
+    --accent: #3b6cf0;
+    --accent-dark: #2550c4;
+    --accent-soft: #1c2a47;
+    --border: #2a3447;
+    --shadow: none;
+    --programata: #7aa2ff;
+    --efectuata: #4ade80;
+    color-scheme: dark;        /* controalele native (ex. calendarul) devin întunecate */
+  }
+}
+
+/* 4.9 Ecranele înguste: o singură coloană (regula stă la final) */
+@media (max-width: 700px) {
+  .container { grid-template-columns: 1fr; }
+  .interventie-card { align-items: flex-start; }
+}

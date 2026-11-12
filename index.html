@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AutoJurnal - mockup</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>AutoJurnal</h1>
+    <p>Istoricul și planificarea intervențiilor de service pentru mașinile tale.</p>
+    <p class="app-count">3 intervenții, dintre care 2 programate</p>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h2>Adaugă intervenție</h2>
+      <form class="interventie-form">
+        <label>Titlu
+          <input type="text" name="titlu" placeholder="Ex: Schimb ulei și filtre" />
+        </label>
+        <label>Tip
+          <select name="tip">
+            <option value="revizie">Revizie</option>
+            <option value="reparatie">Reparație</option>
+            <option value="diagnoza">Diagnoză</option>
+            <option value="inspectie">Inspecție</option>
+          </select>
+        </label>
+        <label>Mașina
+          <input type="text" name="masina" placeholder="Ex: VW Golf 7 · B 77 MRP" />
+        </label>
+        <div class="form-row">
+          <label>Data
+            <input type="date" name="data" />
+          </label>
+          <label>Kilometraj
+            <input type="number" name="km" min="0" placeholder="Ex: 152000" />
+          </label>
+        </div>
+        <label>Cost (lei)
+          <input type="number" name="cost" min="0" placeholder="Ex: 650" />
+        </label>
+        <button type="submit">Adaugă</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Intervențiile mele</h2>
+      <!-- Când lista e goală: <p class="empty">Nu există nicio intervenție.</p> -->
+      <ul class="interventie-list">
+        <li class="interventie-card">
+          <div>
+            <h3>Schimb ulei și filtre</h3>
+            <span class="badge badge-revizie">Revizie</span>
+            <p class="meta">VW Golf 7 · B 77 MRP · 05.12.2026 · 152.000 km · 650 lei</p>
+          </div>
+          <span class="status">Programată</span>
+        </li>
+        <li class="interventie-card done">
+          <div>
+            <h3>Înlocuire plăcuțe frână față</h3>
+            <span class="badge badge-reparatie">Reparație</span>
+            <p class="meta">VW Golf 7 · B 77 MRP · 14.10.2026 · 149.800 km · 420 lei</p>
+          </div>
+          <span class="status">Efectuată</span>
+        </li>
+        <li class="interventie-card">
+          <div>
+            <h3>Inspecție tehnică periodică (ITP)</h3>
+            <span class="badge badge-inspectie">Inspecție</span>
+            <p class="meta">Dacia Logan · IF 12 ABC · 20.01.2027 · 98.000 km · 180 lei</p>
+          </div>
+          <span class="status">Programată</span>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="app-footer">AutoJurnal · Proiect Tehnologii Web</footer>
+</body>
+</html>
