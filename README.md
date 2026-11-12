@@ -70,6 +70,15 @@ The list is rendered from the data, through two components:
 - `InterventieCard` receives a single intervention through props and displays
   it: title, type badge, car, date, odometer, cost and state
 
+## Stage 5: local state and events
+
+The list lives in React state. Marking an intervention as done and deleting it
+work from the page, and the header (counter and money spent on done work)
+follows automatically, because both are derived values. A button in the header
+switches between light and dark mode; the choice is remembered in
+`localStorage`. List changes are lost on refresh, which is what stage 6 and
+stage 10 fix.
+
 ## How to run
 
 Requires Node.js 20.19 or newer.
@@ -94,4 +103,5 @@ Details per stage: see the ai-log/ folder.
 - [x] Stage 2: data logic in JavaScript
 - [x] Stage 3: Vite and React project
 - [x] Stage 4: components rendered from data
-- [ ] Stage 5: local state and events
+- [x] Stage 5: local state and events
+- [ ] Stage 6: data from a mock API

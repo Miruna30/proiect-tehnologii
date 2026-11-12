@@ -196,7 +196,8 @@ body {
 .badge-inspectie { background: var(--inspectie); }
 
 /* 4.8 Intervenția efectuată: titlul tăiat și gri */
-.interventie-card.done { border-left-color: var(--efectuata); }
+.interventie-card.done,
+.interventie-card.done:hover { border-left-color: var(--efectuata); }
 
 .interventie-card.done h3 {
   text-decoration: line-through;
@@ -227,8 +228,9 @@ body {
 }
 
 /* Pasul 5: tema întunecată redefinește doar variabilele */
+/* Etapa 5: tema sistemului, dacă utilizatorul nu a ales explicit tema luminoasă */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --bg: #0f141c;
     --card: #182030;
     --text: #e5e9f0;
@@ -244,8 +246,91 @@ body {
   }
 }
 
+/* Etapa 5: tema aleasă din buton are prioritate față de cea a sistemului */
+:root[data-theme="dark"] {
+  --bg: #0f141c;
+  --card: #182030;
+  --text: #e5e9f0;
+  --muted: #9aa4b2;
+  --accent: #3b6cf0;
+  --accent-dark: #2550c4;
+  --accent-soft: #1c2a47;
+  --border: #2a3447;
+  --shadow: none;
+  --programata: #7aa2ff;
+  --efectuata: #4ade80;
+  color-scheme: dark;
+}
+
 /* 4.9 Ecranele înguste: o singură coloană (regula stă la final) */
 @media (max-width: 700px) {
   .container { grid-template-columns: 1fr; }
   .interventie-card { align-items: flex-start; }
+}
+
+/* Etapa 5: checkbox, stare și buton de ștergere în card */
+.interventie-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  flex: 1;
+  min-width: 0;
+}
+
+.interventie-main input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 4px;
+  accent-color: var(--accent);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.card-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.btn-danger {
+  border: 1px solid var(--danger);
+  background: transparent;
+  color: var(--danger);
+  border-radius: 8px;
+  padding: 5px 12px;
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.btn-danger:hover { background: var(--danger); color: var(--on-accent); }
+
+/* Etapa 5: statistica din antet și butonul de comutare a temei */
+.app-stats {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.app-header { position: relative; }
+
+.theme-toggle {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  padding: 6px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--on-accent);
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.theme-toggle:hover { background: rgba(255, 255, 255, 0.15); }
+
+@media (max-width: 700px) {
+  .app-header { padding-top: 56px; }
 }
