@@ -47,6 +47,14 @@ Sample data used across all stages:
 2. Înlocuire plăcuțe frână față, done, reparatie (VW Golf 7, 14.10.2026, 149,800 km, 420 lei)
 3. Inspecție tehnică periodică (ITP), planned, inspectie (Dacia Logan, 20.01.2027, 98,000 km, 180 lei)
 
+## Stage 2: data logic
+
+Plain JavaScript, no DOM. `interventii.js` holds the array and the functions
+that read and change it: list titles, count planned items, search by title or
+car, total cost of done work, add with validation, toggle and delete. Every
+function returns a new list and never changes the one it receives. Results are
+printed in the browser console (F12).
+
 ## How to run
 
 Open `index.html` in a browser. No build step, no server.
@@ -62,4 +70,5 @@ Details per stage: see the ai-log/ folder.
 ## Status
 
 - [x] Stage 1: static mockup
-- [ ] Stage 2: data logic in JavaScript
+- [x] Stage 2: data logic in JavaScript
+- [ ] Stage 3: Vite and React project
