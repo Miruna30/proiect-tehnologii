@@ -222,3 +222,17 @@ Each requirement links to the exact lines of the commit in which it was done.
 | S6-R6 | README Stage 6 section + AI log | [README.md#L82-L87](https://github.com/Miruna30/proiect-tehnologii/blob/736278a6917b690866ef96d3715b4399cceddd71/README.md#L82-L87), [ai-log/etapa-06.md](https://github.com/Miruna30/proiect-tehnologii/blob/736278a6917b690866ef96d3715b4399cceddd71/ai-log/etapa-06.md) | read |
 | S6-R7 | commit "Stage 6" pushed | [736278a](https://github.com/Miruna30/proiect-tehnologii/commit/736278a6917b690866ef96d3715b4399cceddd71) | commit history |
 
+
+### Stage 7 checklist
+
+| ID | Requirement | Where (permalink) | How to check |
+| --- | --- | --- | --- |
+| S7-R1 | controlled form: value + onChange on every field | [InterventieForm.jsx#L63-L152](https://github.com/Miruna30/proiect-tehnologii/blob/d6ecce81af7ba7d1945ee5bd0c37df04f59b63e6/frontend/src/components/InterventieForm.jsx#L63-L152) | read |
+| S7-R2 | empty title shows an error, nothing is sent | [InterventieForm.jsx#L39-L42](https://github.com/Miruna30/proiect-tehnologii/blob/d6ecce81af7ba7d1945ee5bd0c37df04f59b63e6/frontend/src/components/InterventieForm.jsx#L39-L42), [validare.js#L16-L31](https://github.com/Miruna30/proiect-tehnologii/blob/d6ecce81af7ba7d1945ee5bd0c37df04f59b63e6/frontend/src/validare.js#L16-L31) | submit empty, watch Network |
+| S7-R3 | added item shows in the list and survives refresh | [App.jsx#L54-L57](https://github.com/Miruna30/proiect-tehnologii/blob/d6ecce81af7ba7d1945ee5bd0c37df04f59b63e6/frontend/src/App.jsx#L54-L57), [api.js#L21-L23](https://github.com/Miruna30/proiect-tehnologii/blob/d6ecce81af7ba7d1945ee5bd0c37df04f59b63e6/frontend/src/api.js#L21-L23) | add, refresh |
+| S7-R4 | toggle and delete survive refresh | [App.jsx#L59-L76](https://github.com/Miruna30/proiect-tehnologii/blob/d6ecce81af7ba7d1945ee5bd0c37df04f59b63e6/frontend/src/App.jsx#L59-L76) | toggle/delete, refresh |
+| S7-R5 | button disabled while sending, form cleared only on success | [InterventieForm.jsx#L46-L58](https://github.com/Miruna30/proiect-tehnologii/blob/d6ecce81af7ba7d1945ee5bd0c37df04f59b63e6/frontend/src/components/InterventieForm.jsx#L46-L58) | --delay 3000; stop API and submit |
+| S7-R6 | tw.json and the data-testid attributes from table 7.3 | [tw.json](https://github.com/Miruna30/proiect-tehnologii/blob/d6ecce81af7ba7d1945ee5bd0c37df04f59b63e6/tw.json), [InterventieCard.jsx#L15-L18](https://github.com/Miruna30/proiect-tehnologii/blob/d6ecce81af7ba7d1945ee5bd0c37df04f59b63e6/frontend/src/components/InterventieCard.jsx#L15-L18) | querySelectorAll in the console |
+| S7-R7 | README Stage 7 section + AI log | [README.md#L89-L101](https://github.com/Miruna30/proiect-tehnologii/blob/d6ecce81af7ba7d1945ee5bd0c37df04f59b63e6/README.md#L89-L101), [ai-log/etapa-07.md](https://github.com/Miruna30/proiect-tehnologii/blob/d6ecce81af7ba7d1945ee5bd0c37df04f59b63e6/ai-log/etapa-07.md) | read |
+| S7-R8 | commit "Stage 7" pushed | [d6ecce8](https://github.com/Miruna30/proiect-tehnologii/commit/d6ecce81af7ba7d1945ee5bd0c37df04f59b63e6) | commit history |
+
