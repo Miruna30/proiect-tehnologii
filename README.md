@@ -209,3 +209,16 @@ Each requirement links to the exact lines of the commit in which it was done.
 | S5-R7 | no console warnings; README + AI log | [README.md#L73-L80](https://github.com/Miruna30/proiect-tehnologii/blob/e162ae608e7277fb402fc569373e7af5fac68d7f/README.md#L73-L80), [ai-log/etapa-05.md](https://github.com/Miruna30/proiect-tehnologii/blob/e162ae608e7277fb402fc569373e7af5fac68d7f/ai-log/etapa-05.md) | F12, Console |
 | S5-R8 | commit "Stage 5" pushed | [e162ae6](https://github.com/Miruna30/proiect-tehnologii/commit/e162ae608e7277fb402fc569373e7af5fac68d7f) | commit history |
 
+
+### Stage 6 checklist
+
+| ID | Requirement | Where (permalink) | How to check |
+| --- | --- | --- | --- |
+| S6-R1 | npm run api starts, route shows JSON | [package.json#L11](https://github.com/Miruna30/proiect-tehnologii/blob/736278a6917b690866ef96d3715b4399cceddd71/frontend/package.json#L11), [frontend/db.json](https://github.com/Miruna30/proiect-tehnologii/blob/736278a6917b690866ef96d3715b4399cceddd71/frontend/db.json) | open localhost:3001/interventii |
+| S6-R2 | data no longer in React code | [App.jsx#L15](https://github.com/Miruna30/proiect-tehnologii/blob/736278a6917b690866ef96d3715b4399cceddd71/frontend/src/App.jsx#L15) | read |
+| S6-R3 | loading message while waiting | [App.jsx#L93](https://github.com/Miruna30/proiect-tehnologii/blob/736278a6917b690866ef96d3715b4399cceddd71/frontend/src/App.jsx#L93) | --delay 4000 |
+| S6-R4 | error message when API is down | [App.jsx#L94-L98](https://github.com/Miruna30/proiect-tehnologii/blob/736278a6917b690866ef96d3715b4399cceddd71/frontend/src/App.jsx#L94-L98) | stop npm run api, refresh |
+| S6-R5 | fetch only in api.js, URL from env | [api.js#L2-L10](https://github.com/Miruna30/proiect-tehnologii/blob/736278a6917b690866ef96d3715b4399cceddd71/frontend/src/api.js#L2-L10), [frontend/.env.example](https://github.com/Miruna30/proiect-tehnologii/blob/736278a6917b690866ef96d3715b4399cceddd71/frontend/.env.example) | search for fetch |
+| S6-R6 | README Stage 6 section + AI log | [README.md#L82-L87](https://github.com/Miruna30/proiect-tehnologii/blob/736278a6917b690866ef96d3715b4399cceddd71/README.md#L82-L87), [ai-log/etapa-06.md](https://github.com/Miruna30/proiect-tehnologii/blob/736278a6917b690866ef96d3715b4399cceddd71/ai-log/etapa-06.md) | read |
+| S6-R7 | commit "Stage 6" pushed | [736278a](https://github.com/Miruna30/proiect-tehnologii/commit/736278a6917b690866ef96d3715b4399cceddd71) | commit history |
+
