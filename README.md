@@ -156,3 +156,16 @@ Each requirement links to the exact lines of the commit in which it was done.
 | S1-R7 | visible focus, readable dark theme | [style.css#L222-L229](https://github.com/Miruna30/proiect-tehnologii/blob/d5172a191d706c9afb8774198939e310ba5df367/style.css#L222-L229) |  Tab; dark mode |
 | S1-R8 | commit "Stage 1" pushed | [d5172a1](https://github.com/Miruna30/proiect-tehnologii/commit/d5172a191d706c9afb8774198939e310ba5df367) | commit history |
 
+
+### Stage 2 checklist
+
+| ID | Requirement | Where (permalink) | How to check |
+| --- | --- | --- | --- |
+| S2-R1 | JS file linked, logs on page load | [index.html#L83](https://github.com/Miruna30/proiect-tehnologii/blob/bf81e6a765a6d8fe22e0cadb53315340a3b6f445/index.html#L83) | open page, F12 |
+| S2-R2 | 3+ items with id, name, state, tag | [interventii.js#L5-L36](https://github.com/Miruna30/proiect-tehnologii/blob/bf81e6a765a6d8fe22e0cadb53315340a3b6f445/interventii.js#L5-L36) | read |
+| S2-R3 | list, count, search, add, toggle, delete | [interventii.js#L43-L121](https://github.com/Miruna30/proiect-tehnologii/blob/bf81e6a765a6d8fe22e0cadb53315340a3b6f445/interventii.js#L43-L121) | console output |
+| S2-R4 | add rejects empty name and invalid tag | [interventii.js#L79-L91](https://github.com/Miruna30/proiect-tehnologii/blob/bf81e6a765a6d8fe22e0cadb53315340a3b6f445/interventii.js#L79-L91) | last 4 console lines |
+| S2-R5 | original array unchanged after add | [interventii.js#L146](https://github.com/Miruna30/proiect-tehnologii/blob/bf81e6a765a6d8fe22e0cadb53315340a3b6f445/interventii.js#L146) | console line |
+| S2-R6 | README Stage 2 section + AI log | [README.md#L50-L56](https://github.com/Miruna30/proiect-tehnologii/blob/bf81e6a765a6d8fe22e0cadb53315340a3b6f445/README.md#L50-L56), [ai-log/etapa-02.md](https://github.com/Miruna30/proiect-tehnologii/blob/bf81e6a765a6d8fe22e0cadb53315340a3b6f445/ai-log/etapa-02.md) | read |
+| S2-R7 | commit "Stage 2" pushed | [bf81e6a](https://github.com/Miruna30/proiect-tehnologii/commit/bf81e6a765a6d8fe22e0cadb53315340a3b6f445) | commit history |
+
