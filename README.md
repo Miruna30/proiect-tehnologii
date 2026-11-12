@@ -61,6 +61,15 @@ The app now lives in `frontend/`, built with Vite. The data from stage 2
 moved into the main component; the list is still printed raw. The static
 mockup from stages 1 and 2 is kept in `mockup/`.
 
+## Stage 4: components
+
+The list is rendered from the data, through two components:
+
+- `InterventieList` receives the whole array and renders one card per item
+  (or a message when the list is empty)
+- `InterventieCard` receives a single intervention through props and displays
+  it: title, type badge, car, date, odometer, cost and state
+
 ## How to run
 
 Requires Node.js 20.19 or newer.
@@ -84,4 +93,5 @@ Details per stage: see the ai-log/ folder.
 - [x] Stage 1: static mockup
 - [x] Stage 2: data logic in JavaScript
 - [x] Stage 3: Vite and React project
-- [ ] Stage 4: components rendered from data
+- [x] Stage 4: components rendered from data
+- [ ] Stage 5: local state and events

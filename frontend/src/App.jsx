@@ -1,3 +1,5 @@
+import InterventieList from "./components/InterventieList.jsx";
+
 // Datele de test din README (aceleași ca în Etapa 2)
 const interventii = [
   {
@@ -49,8 +51,7 @@ export default function App() {
       <main className="container">
         <section className="panel">
           <h2>Intervențiile mele</h2>
-          {/* Temporar: date brute; componentele apar în Etapa 4 */}
-          <pre>{JSON.stringify(interventii, null, 2)}</pre>
+          <InterventieList interventii={interventii} />
         </section>
       </main>
     </>
