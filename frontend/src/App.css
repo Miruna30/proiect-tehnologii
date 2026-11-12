@@ -25,6 +25,8 @@
   --programata: #1f4fd1;
   --efectuata: #15803d;
   --danger: #dc2626;
+  --error-bg: #fef2f2;       /* Etapa 6: mesajele de eroare */
+  --error-border: #fecaca;
 }
 
 body {
@@ -242,6 +244,8 @@ body {
     --shadow: none;
     --programata: #7aa2ff;
     --efectuata: #4ade80;
+    --error-bg: #3b1a1d;
+    --error-border: #7f2a2f;
     color-scheme: dark;        /* controalele native (ex. calendarul) devin întunecate */
   }
 }
@@ -259,6 +263,8 @@ body {
   --shadow: none;
   --programata: #7aa2ff;
   --efectuata: #4ade80;
+  --error-bg: #3b1a1d;
+  --error-border: #7f2a2f;
   color-scheme: dark;
 }
 
@@ -333,4 +339,15 @@ body {
 
 @media (max-width: 700px) {
   .app-header { padding-top: 56px; }
+}
+
+/* Etapa 6: stări de încărcare și de eroare */
+.info { color: var(--muted); }
+
+.error {
+  color: var(--danger);
+  background: var(--error-bg);
+  border: 1px solid var(--error-border);
+  border-radius: 8px;
+  padding: 10px 12px;
 }

@@ -79,15 +79,21 @@ switches between light and dark mode; the choice is remembered in
 `localStorage`. List changes are lost on refresh, which is what stage 6 and
 stage 10 fix.
 
+## Stage 6: data from a mock API
+
+The interventions are served by json-server from `frontend/db.json`
+(resource `interventii`). The app fetches them on load and shows a loading
+state and an error state. All requests live in `src/api.js`; the API address
+comes from the `VITE_API_URL` variable (see `.env.example`).
+
 ## How to run
 
 Requires Node.js 20.19 or newer.
 
     cd frontend
     npm install
-    npm run dev
-
-Then open the address printed in the terminal (http://localhost:5173).
+    npm run api    # terminal 1, http://localhost:3001/interventii
+    npm run dev    # terminal 2, http://localhost:5173
 
 ## AI usage
 
@@ -104,4 +110,5 @@ Details per stage: see the ai-log/ folder.
 - [x] Stage 3: Vite and React project
 - [x] Stage 4: components rendered from data
 - [x] Stage 5: local state and events
-- [ ] Stage 6: data from a mock API
+- [x] Stage 6: data from a mock API
+- [ ] Stage 7: form and validation
