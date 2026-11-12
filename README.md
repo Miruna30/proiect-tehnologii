@@ -169,3 +169,16 @@ Each requirement links to the exact lines of the commit in which it was done.
 | S2-R6 | README Stage 2 section + AI log | [README.md#L50-L56](https://github.com/Miruna30/proiect-tehnologii/blob/bf81e6a765a6d8fe22e0cadb53315340a3b6f445/README.md#L50-L56), [ai-log/etapa-02.md](https://github.com/Miruna30/proiect-tehnologii/blob/bf81e6a765a6d8fe22e0cadb53315340a3b6f445/ai-log/etapa-02.md) | read |
 | S2-R7 | commit "Stage 2" pushed | [bf81e6a](https://github.com/Miruna30/proiect-tehnologii/commit/bf81e6a765a6d8fe22e0cadb53315340a3b6f445) | commit history |
 
+
+### Stage 3 checklist
+
+| ID | Requirement | Where (permalink) | How to check |
+| --- | --- | --- | --- |
+| S3-R1 | npm run dev starts without errors | [frontend/package.json](https://github.com/Miruna30/proiect-tehnologii/blob/7ee587c8dd0170a1eec6993c0e1ad20e8fb4d66e/frontend/package.json) | npm install, npm run dev |
+| S3-R2 | app name and counter computed from data | [App.jsx#L37-L47](https://github.com/Miruna30/proiect-tehnologii/blob/7ee587c8dd0170a1eec6993c0e1ad20e8fb4d66e/frontend/src/App.jsx#L37-L47) | edit data, save |
+| S3-R3 | data from README, not from the example | [App.jsx#L2-L33](https://github.com/Miruna30/proiect-tehnologii/blob/7ee587c8dd0170a1eec6993c0e1ad20e8fb4d66e/frontend/src/App.jsx#L2-L33) | compare with README |
+| S3-R4 | stage 1 styles reused | [frontend/src/App.css](https://github.com/Miruna30/proiect-tehnologii/blob/7ee587c8dd0170a1eec6993c0e1ad20e8fb4d66e/frontend/src/App.css) | look at the page |
+| S3-R5 | node_modules ignored, build passes | [.gitignore#L10-L11](https://github.com/Miruna30/proiect-tehnologii/blob/7ee587c8dd0170a1eec6993c0e1ad20e8fb4d66e/frontend/.gitignore#L10-L11) | npm run build |
+| S3-R6 | README Stage 3 section + AI log | [README.md#L58-L62](https://github.com/Miruna30/proiect-tehnologii/blob/7ee587c8dd0170a1eec6993c0e1ad20e8fb4d66e/README.md#L58-L62), [ai-log/etapa-03.md](https://github.com/Miruna30/proiect-tehnologii/blob/7ee587c8dd0170a1eec6993c0e1ad20e8fb4d66e/ai-log/etapa-03.md) | read |
+| S3-R7 | commit "Stage 3" pushed | [7ee587c](https://github.com/Miruna30/proiect-tehnologii/commit/7ee587c8dd0170a1eec6993c0e1ad20e8fb4d66e) | commit history |
+
