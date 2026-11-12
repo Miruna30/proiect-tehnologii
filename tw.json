@@ -1,0 +1,12 @@
+{
+  "resource": "interventii",
+  "title": "titlu",
+  "done": "efectuata",
+  "sample": {
+    "tip": "reparatie",
+    "masina": "Dacia Logan · IF 12 ABC",
+    "data": "2026-11-20",
+    "km": 98300,
+    "cost": 150
+  }
+}

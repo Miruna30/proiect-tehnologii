@@ -68,8 +68,8 @@ body {
   margin: 24px auto;
   padding: 0 16px;
   display: grid;
-  /* Etapa 3: doar panoul cu date; a doua coloană revine în Etapa 7 */
-  grid-template-columns: 1fr;
+  /* Etapa 7: formularul în stânga, lista în dreapta */
+  grid-template-columns: 1fr 2fr;
   gap: 24px;
   align-items: start;
 }
@@ -350,4 +350,72 @@ body {
   border: 1px solid var(--error-border);
   border-radius: 8px;
   padding: 10px 12px;
+}
+
+/* Etapa 7: buton dezactivat cât timp se trimite */
+.interventie-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.interventie-form input[aria-invalid="true"] {
+  border-color: var(--danger);
+}
+
+.interventie-form .error { margin: 0; }
+
+/* Etapa 7: bara de filtre de deasupra listei */
+.filtre {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.filtre-stare,
+.filtre-campuri {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip {
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 5px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.chip:hover { border-color: var(--accent); }
+
+.chip.activ {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+
+.filtre select,
+.filtre input {
+  font: inherit;
+  font-size: 0.9rem;
+  padding: 5px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--text);
+}
+
+/* text citit doar de cititoarele de ecran */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }

@@ -86,6 +86,20 @@ The interventions are served by json-server from `frontend/db.json`
 state and an error state. All requests live in `src/api.js`; the API address
 comes from the `VITE_API_URL` variable (see `.env.example`).
 
+## Stage 7: form and validation
+
+Interventions can be added from the page. The form is controlled and validated
+(`src/validare.js`: required title, max 100 chars, a type from the list,
+required car, valid date, odometer between 0 and 2,000,000, cost not
+negative), and every change (add, toggle, delete) goes to the API before it
+shows up in the list, so everything survives a refresh. Extras:
+
+- the list can be filtered by state (all / planned / done), by car and by title;
+- the car field suggests the cars already in the list;
+- the header shows the money spent on done work and the next planned date.
+
+`tw.json` and the `data-testid` attributes are used by the automatic check.
+
 ## How to run
 
 Requires Node.js 20.19 or newer.
@@ -94,6 +108,17 @@ Requires Node.js 20.19 or newer.
     npm install
     npm run api    # terminal 1, http://localhost:3001/interventii
     npm run dev    # terminal 2, http://localhost:5173
+
+## Roadmap (next stages)
+
+- **Stage 8, routing:** a detail page per intervention (`/interventii/:id`)
+  and a page per car with its full history and total cost.
+- **Stage 9, own server:** a Node.js API replacing json-server.
+- **Stage 10, database:** interventions saved in a database; the category
+  (Motor, Frânare, Suspensie, Electrică, Caroserie) becomes a related table.
+- **Stage 11, authentication:** each user sees only their own cars.
+- **Later ideas:** reminders for periodic deadlines (inspection, insurance,
+  oil change every 15,000 km), cost per year chart.
 
 ## AI usage
 
@@ -111,4 +136,5 @@ Details per stage: see the ai-log/ folder.
 - [x] Stage 4: components rendered from data
 - [x] Stage 5: local state and events
 - [x] Stage 6: data from a mock API
-- [ ] Stage 7: form and validation
+- [x] Stage 7: form and validation
+- [ ] Stage 8: routing and detail page

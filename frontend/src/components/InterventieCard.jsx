@@ -12,15 +12,20 @@ const ETICHETE_TIP = {
 // prin onToggle și onDelete ce a făcut utilizatorul.
 export default function InterventieCard({ interventie, onToggle, onDelete }) {
   return (
-    <li className={interventie.efectuata ? "interventie-card done" : "interventie-card"}>
+    <li
+      className={interventie.efectuata ? "interventie-card done" : "interventie-card"}
+      data-testid="item"
+      data-id={interventie.id}
+    >
       <label className="interventie-main">
         <input
           type="checkbox"
           checked={interventie.efectuata}
           onChange={() => onToggle(interventie.id)}
+          data-testid="item-toggle"
         />
         <div>
-          <h3>{interventie.titlu}</h3>
+          <h3 data-testid="item-title">{interventie.titlu}</h3>
           <span className={`badge badge-${interventie.tip}`}>
             {ETICHETE_TIP[interventie.tip]}
           </span>
@@ -39,6 +44,7 @@ export default function InterventieCard({ interventie, onToggle, onDelete }) {
           className="btn-danger"
           onClick={() => onDelete(interventie.id)}
           aria-label={`Șterge ${interventie.titlu}`}
+          data-testid="item-delete"
         >
           Șterge
         </button>
