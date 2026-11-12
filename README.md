@@ -182,3 +182,16 @@ Each requirement links to the exact lines of the commit in which it was done.
 | S3-R6 | README Stage 3 section + AI log | [README.md#L58-L62](https://github.com/Miruna30/proiect-tehnologii/blob/7ee587c8dd0170a1eec6993c0e1ad20e8fb4d66e/README.md#L58-L62), [ai-log/etapa-03.md](https://github.com/Miruna30/proiect-tehnologii/blob/7ee587c8dd0170a1eec6993c0e1ad20e8fb4d66e/ai-log/etapa-03.md) | read |
 | S3-R7 | commit "Stage 3" pushed | [7ee587c](https://github.com/Miruna30/proiect-tehnologii/commit/7ee587c8dd0170a1eec6993c0e1ad20e8fb4d66e) | commit history |
 
+
+### Stage 4 checklist
+
+| ID | Requirement | Where (permalink) | How to check |
+| --- | --- | --- | --- |
+| S4-R1 | 2+ components in src/components/ | [frontend/src/components/](https://github.com/Miruna30/proiect-tehnologii/tree/f161ac1e8022aa4eeb882b2c6354ee955ccbaba6/frontend/src/components) | open folder |
+| S4-R2 | card receives data through props | [InterventieCard.jsx#L12-L30](https://github.com/Miruna30/proiect-tehnologii/blob/f161ac1e8022aa4eeb882b2c6354ee955ccbaba6/frontend/src/components/InterventieCard.jsx#L12-L30) | read |
+| S4-R3 | map + key={id}, no console warnings | [InterventieList.jsx#L12-L14](https://github.com/Miruna30/proiect-tehnologii/blob/f161ac1e8022aa4eeb882b2c6354ee955ccbaba6/frontend/src/components/InterventieList.jsx#L12-L14) | F12, Console |
+| S4-R4 | message for empty list | [InterventieList.jsx#L6-L8](https://github.com/Miruna30/proiect-tehnologii/blob/f161ac1e8022aa4eeb882b2c6354ee955ccbaba6/frontend/src/components/InterventieList.jsx#L6-L8) | set array to [] |
+| S4-R5 | state changes the card look | [InterventieCard.jsx#L14](https://github.com/Miruna30/proiect-tehnologii/blob/f161ac1e8022aa4eeb882b2c6354ee955ccbaba6/frontend/src/components/InterventieCard.jsx#L14) | toggle a done flag |
+| S4-R6 | README Stage 4 section + AI log | [README.md#L64-L71](https://github.com/Miruna30/proiect-tehnologii/blob/f161ac1e8022aa4eeb882b2c6354ee955ccbaba6/README.md#L64-L71), [ai-log/etapa-04.md](https://github.com/Miruna30/proiect-tehnologii/blob/f161ac1e8022aa4eeb882b2c6354ee955ccbaba6/ai-log/etapa-04.md) | read |
+| S4-R7 | commit "Stage 4" pushed | [f161ac1](https://github.com/Miruna30/proiect-tehnologii/commit/f161ac1e8022aa4eeb882b2c6354ee955ccbaba6) | commit history |
+
