@@ -195,3 +195,17 @@ Each requirement links to the exact lines of the commit in which it was done.
 | S4-R6 | README Stage 4 section + AI log | [README.md#L64-L71](https://github.com/Miruna30/proiect-tehnologii/blob/f161ac1e8022aa4eeb882b2c6354ee955ccbaba6/README.md#L64-L71), [ai-log/etapa-04.md](https://github.com/Miruna30/proiect-tehnologii/blob/f161ac1e8022aa4eeb882b2c6354ee955ccbaba6/ai-log/etapa-04.md) | read |
 | S4-R7 | commit "Stage 4" pushed | [f161ac1](https://github.com/Miruna30/proiect-tehnologii/commit/f161ac1e8022aa4eeb882b2c6354ee955ccbaba6) | commit history |
 
+
+### Stage 5 checklist
+
+| ID | Requirement | Where (permalink) | How to check |
+| --- | --- | --- | --- |
+| S5-R1 | list kept in useState, in App | [App.jsx#L47](https://github.com/Miruna30/proiect-tehnologii/blob/e162ae608e7277fb402fc569373e7af5fac68d7f/frontend/src/App.jsx#L47) | read |
+| S5-R2 | toggling changes state and card look | [App.jsx#L51-L55](https://github.com/Miruna30/proiect-tehnologii/blob/e162ae608e7277fb402fc569373e7af5fac68d7f/frontend/src/App.jsx#L51-L55), [InterventieCard.jsx#L18-L21](https://github.com/Miruna30/proiect-tehnologii/blob/e162ae608e7277fb402fc569373e7af5fac68d7f/frontend/src/components/InterventieCard.jsx#L18-L21) | click a checkbox |
+| S5-R3 | delete removes the item | [App.jsx#L57-L59](https://github.com/Miruna30/proiect-tehnologii/blob/e162ae608e7277fb402fc569373e7af5fac68d7f/frontend/src/App.jsx#L57-L59), [InterventieCard.jsx#L38-L44](https://github.com/Miruna30/proiect-tehnologii/blob/e162ae608e7277fb402fc569373e7af5fac68d7f/frontend/src/components/InterventieCard.jsx#L38-L44) | click Șterge |
+| S5-R4 | header counter derived, not in state | [App.jsx#L73-L77](https://github.com/Miruna30/proiect-tehnologii/blob/e162ae608e7277fb402fc569373e7af5fac68d7f/frontend/src/App.jsx#L73-L77) | toggle, watch header |
+| S5-R5 | immutable updates (no push, splice, assignment) | [App.jsx#L51-L57](https://github.com/Miruna30/proiect-tehnologii/blob/e162ae608e7277fb402fc569373e7af5fac68d7f/frontend/src/App.jsx#L51-L57) | read |
+| S5-R6 | light / dark toggle: state + data-theme on html | [App.jsx#L62-L71](https://github.com/Miruna30/proiect-tehnologii/blob/e162ae608e7277fb402fc569373e7af5fac68d7f/frontend/src/App.jsx#L62-L71), [App.css#L231-L262](https://github.com/Miruna30/proiect-tehnologii/blob/e162ae608e7277fb402fc569373e7af5fac68d7f/frontend/src/App.css#L231-L262) | click the button, both system themes |
+| S5-R7 | no console warnings; README + AI log | [README.md#L73-L80](https://github.com/Miruna30/proiect-tehnologii/blob/e162ae608e7277fb402fc569373e7af5fac68d7f/README.md#L73-L80), [ai-log/etapa-05.md](https://github.com/Miruna30/proiect-tehnologii/blob/e162ae608e7277fb402fc569373e7af5fac68d7f/ai-log/etapa-05.md) | F12, Console |
+| S5-R8 | commit "Stage 5" pushed | [e162ae6](https://github.com/Miruna30/proiect-tehnologii/commit/e162ae608e7277fb402fc569373e7af5fac68d7f) | commit history |
+
