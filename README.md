@@ -138,3 +138,21 @@ Details per stage: see the ai-log/ folder.
 - [x] Stage 6: data from a mock API
 - [x] Stage 7: form and validation
 - [ ] Stage 8: routing and detail page
+
+## Checklists
+
+Each requirement links to the exact lines of the commit in which it was done.
+
+### Stage 1 checklist
+
+| ID | Requirement | Where (permalink) | How to check |
+| --- | --- | --- | --- |
+| S1-R1 | README: description, fields, sample data, how to run | [README.md](https://github.com/Miruna30/proiect-tehnologii/blob/d5172a191d706c9afb8774198939e310ba5df367/README.md) | read |
+| S1-R2 | AI usage section | [README.md#L54-L60](https://github.com/Miruna30/proiect-tehnologii/blob/d5172a191d706c9afb8774198939e310ba5df367/README.md#L54-L60) | read |
+| S1-R3 | AI log for stage 1 | [ai-log/etapa-01.md](https://github.com/Miruna30/proiect-tehnologii/blob/d5172a191d706c9afb8774198939e310ba5df367/ai-log/etapa-01.md) | read |
+| S1-R4 | header, form (text + select), 3 cards with own data | [index.html#L10-L79](https://github.com/Miruna30/proiect-tehnologii/blob/d5172a191d706c9afb8774198939e310ba5df367/index.html#L10-L79) | open the page |
+| S1-R5 | finished card looks different | [style.css#L197-L205](https://github.com/Miruna30/proiect-tehnologii/blob/d5172a191d706c9afb8774198939e310ba5df367/style.css#L197-L205) | look at the card |
+| S1-R6 | 2 columns on desktop, 1 under 700px | [style.css#L246-L250](https://github.com/Miruna30/proiect-tehnologii/blob/d5172a191d706c9afb8774198939e310ba5df367/style.css#L246-L250) | resize < 700px |
+| S1-R7 | visible focus, readable dark theme | [style.css#L222-L229](https://github.com/Miruna30/proiect-tehnologii/blob/d5172a191d706c9afb8774198939e310ba5df367/style.css#L222-L229) |  Tab; dark mode |
+| S1-R8 | commit "Stage 1" pushed | [d5172a1](https://github.com/Miruna30/proiect-tehnologii/commit/d5172a191d706c9afb8774198939e310ba5df367) | commit history |
+
