@@ -1,7 +1,8 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 import App from "./App.jsx";
-import "./App.css";
+import "./index.css";
 
 // Opțional (Etapa 5): tema aleasă data trecută se aplică înainte de prima randare
 try {
@@ -13,6 +14,8 @@ try {
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </StrictMode>
 );

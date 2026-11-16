@@ -1,4 +1,5 @@
 import InterventieCard from "./InterventieCard.jsx";
+import styles from "./InterventieList.module.css";
 
 // Primește lista și funcțiile și le transmite fiecărui card.
 export default function InterventieList({ interventii, onToggle, onDelete }) {
@@ -12,7 +13,7 @@ export default function InterventieList({ interventii, onToggle, onDelete }) {
   }
 
   return (
-    <ul className="interventie-list">
+    <ul className={styles.list}>
       {interventii.map((interventie) => (
         <InterventieCard
           key={interventie.id}

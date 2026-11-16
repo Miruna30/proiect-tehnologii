@@ -1,0 +1,88 @@
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--programata);
+  border-radius: 6px;
+  background: var(--card);
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.card:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.main {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.main input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 5px;
+  accent-color: var(--accent);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* titlul, devenit link spre pagina de detaliu */
+.title {
+  display: block;
+  margin-bottom: 6px;
+  font-family: var(--font-titlu);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.title:hover {
+  color: var(--accent-text);
+  text-decoration: underline;
+}
+
+.meta {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.status {
+  flex-shrink: 0;
+  font-family: var(--font-titlu);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent-text);
+}
+
+/* intervenția efectuată: bară verde, titlul tăiat și gri */
+.done,
+.done:hover { border-left-color: var(--efectuata); }
+
+.done .title {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.done .status { color: var(--efectuata); }
+
+@media (max-width: 700px) {
+  .card { align-items: flex-start; }
+}

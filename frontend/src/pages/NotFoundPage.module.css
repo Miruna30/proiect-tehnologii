@@ -1,0 +1,14 @@
+.notFound {
+  max-width: 560px;
+  margin: 24px auto;
+  text-align: center;
+}
+
+.cod {
+  margin: 0;
+  font-family: var(--font-titlu);
+  font-size: 6rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--accent);
+}

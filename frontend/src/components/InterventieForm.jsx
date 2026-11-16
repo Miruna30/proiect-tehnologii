@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { TIPURI, TITLU_MAX, MASINA_MAX, valideazaInterventie } from "../validare.js";
+import { TIPURI } from "../constants.js";
+import { TITLU_MAX, MASINA_MAX, valideazaInterventie } from "../validare.js";
+import styles from "./InterventieForm.module.css";
 
 // Data de azi, în formatul cerut de <input type="date">: "2026-11-12"
 function azi() {
@@ -60,7 +62,7 @@ export default function InterventieForm({ onAdd, masini }) {
   }
 
   return (
-    <form className="interventie-form" onSubmit={handleSubmit} noValidate data-testid="form">
+    <form className={styles.form} onSubmit={handleSubmit} noValidate data-testid="form">
       <label>
         Titlu
         <input
@@ -103,7 +105,7 @@ export default function InterventieForm({ onAdd, masini }) {
         ))}
       </datalist>
 
-      <div className="form-row">
+      <div className={styles.row}>
         <label>
           Data
           <input
@@ -146,7 +148,7 @@ export default function InterventieForm({ onAdd, masini }) {
         </p>
       )}
 
-      <button type="submit" disabled={trimite} data-testid="form-submit">
+      <button type="submit" className="btn" disabled={trimite} data-testid="form-submit">
         {trimite ? "Se salvează..." : "Adaugă"}
       </button>
     </form>

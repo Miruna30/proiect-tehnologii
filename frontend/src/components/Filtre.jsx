@@ -1,5 +1,7 @@
 // Bara de filtre de deasupra listei: stare, mașină și căutare text.
 // Componenta nu filtrează nimic: doar afișează valorile primite și anunță schimbările.
+import styles from "./Filtre.module.css";
+
 const STARI = [
   { value: "toate", label: "Toate" },
   { value: "programate", label: "Programate" },
@@ -8,13 +10,13 @@ const STARI = [
 
 export default function Filtre({ stare, onStare, masina, onMasina, masini, cautare, onCautare }) {
   return (
-    <div className="filtre">
-      <div className="filtre-stare" role="group" aria-label="Filtru după stare">
+    <div className={styles.filtre}>
+      <div className={styles.grup} role="group" aria-label="Filtru după stare">
         {STARI.map((s) => (
           <button
             key={s.value}
             type="button"
-            className={stare === s.value ? "chip activ" : "chip"}
+            className={stare === s.value ? `${styles.chip} ${styles.activ}` : styles.chip}
             aria-pressed={stare === s.value}
             onClick={() => onStare(s.value)}
           >
@@ -23,7 +25,7 @@ export default function Filtre({ stare, onStare, masina, onMasina, masini, cauta
         ))}
       </div>
 
-      <div className="filtre-campuri">
+      <div className={styles.grup}>
         <label>
           <span className="sr-only">Mașina</span>
           <select value={masina} onChange={(e) => onMasina(e.target.value)}>

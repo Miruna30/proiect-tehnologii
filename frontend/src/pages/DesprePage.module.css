@@ -1,0 +1,28 @@
+.despre { max-width: 760px; }
+
+.lead {
+  font-size: 1.2rem;
+  margin-top: 0;
+}
+
+.puncte {
+  margin: 0 0 20px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.puncte li {
+  padding: 10px 14px;
+  border-left: 4px solid var(--accent);
+  border-radius: 4px;
+  background: var(--accent-soft);
+}
+
+.stack {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}

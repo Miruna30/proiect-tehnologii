@@ -100,6 +100,23 @@ shows up in the list, so everything survives a refresh. Extras:
 
 `tw.json` and the `data-testid` attributes are used by the automatic check.
 
+## Stage 8: routing and detail page
+
+Four pages behind React Router, inside one common layout (header with
+navigation, footer):
+
+- `/` the list and the add form;
+- `/interventii/:id` the detail page of one intervention, loaded from the API
+  by its id; besides the fields of the card it shows how long until (or since)
+  the intervention and the full history of the same car, with the money spent
+  on it; the history items link to their own detail pages;
+- `/despre` about the app;
+- any other address shows the app's 404 page.
+
+Component styles moved to CSS Modules (`*.module.css` next to each
+component); `src/index.css` keeps only the color variables and the shared
+classes. Fixed values and their labels live in `src/constants.js`.
+
 ## How to run
 
 Requires Node.js 20.19 or newer.
@@ -111,8 +128,6 @@ Requires Node.js 20.19 or newer.
 
 ## Roadmap (next stages)
 
-- **Stage 8, routing:** a detail page per intervention (`/interventii/:id`)
-  and a page per car with its full history and total cost.
 - **Stage 9, own server:** a Node.js API replacing json-server.
 - **Stage 10, database:** interventions saved in a database; the category
   (Motor, Frânare, Suspensie, Electrică, Caroserie) becomes a related table.
@@ -137,7 +152,8 @@ Details per stage: see the ai-log/ folder.
 - [x] Stage 5: local state and events
 - [x] Stage 6: data from a mock API
 - [x] Stage 7: form and validation
-- [ ] Stage 8: routing and detail page
+- [x] Stage 8: routing and detail page
+- [ ] Stage 9: own backend with Express
 
 ## Checklists
 

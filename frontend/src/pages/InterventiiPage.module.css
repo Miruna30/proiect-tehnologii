@@ -1,0 +1,34 @@
+/* formularul în stânga, lista în dreapta */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* contorul, ca o etichetă conturată în portocaliu */
+.summary {
+  display: inline-block;
+  margin: -4px 0 12px;
+  padding: 4px 14px;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  color: var(--accent-text);
+  font-family: var(--font-titlu);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+/* cheltuielile și următoarea programare, într-o casetă cu bară în stânga */
+.stats {
+  margin: 0 0 18px;
+  padding: 10px 14px;
+  border-left: 4px solid var(--accent);
+  border-radius: 4px;
+  background: var(--accent-soft);
+}
+
+@media (max-width: 700px) {
+  .grid { grid-template-columns: 1fr; }
+}

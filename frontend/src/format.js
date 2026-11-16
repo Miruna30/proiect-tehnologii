@@ -19,3 +19,21 @@ export function numarCu(n, singular, plural) {
   const cuDe = n !== 0 && (rest === 0 || rest >= 20);
   return `${n} ${cuDe ? "de " : ""}${plural}`;
 }
+
+// Câte zile sunt de azi până la o dată (negativ = în trecut)
+export function zilePanaLa(iso) {
+  const azi = new Date();
+  azi.setHours(0, 0, 0, 0);
+  const [an, luna, zi] = iso.split("-").map(Number);
+  const tinta = new Date(an, luna - 1, zi);
+  return Math.round((tinta - azi) / 86400000);
+}
+
+// "peste 19 zile", "azi", "acum 33 de zile"
+export function textZile(zile) {
+  if (zile === 0) return "azi";
+  if (zile === 1) return "mâine";
+  if (zile === -1) return "ieri";
+  const n = numarCu(Math.abs(zile), "zi", "zile");
+  return zile > 0 ? `peste ${n}` : `acum ${n}`;
+}

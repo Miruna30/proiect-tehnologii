@@ -1,43 +1,45 @@
+import { Link } from "react-router-dom";
+import { ETICHETE_TIP } from "../constants.js";
 import { formatData, formatNumar } from "../format.js";
+import styles from "./InterventieCard.module.css";
 
-// Textele afișate pentru valorile din date (în date rămân fără diacritice)
-const ETICHETE_TIP = {
-  revizie: "Revizie",
-  reparatie: "Reparație",
-  diagnoza: "Diagnoză",
-  inspectie: "Inspecție",
-};
-
-// O singură intervenție. Cardul nu modifică datele: doar anunță părintele
-// prin onToggle și onDelete ce a făcut utilizatorul.
+// O singură intervenție. Titlul duce la pagina de detaliu; cardul nu modifică
+// datele, doar anunță părintele prin onToggle și onDelete.
 export default function InterventieCard({ interventie, onToggle, onDelete }) {
   return (
     <li
-      className={interventie.efectuata ? "interventie-card done" : "interventie-card"}
+      className={interventie.efectuata ? `${styles.card} ${styles.done}` : styles.card}
       data-testid="item"
       data-id={interventie.id}
     >
-      <label className="interventie-main">
+      <div className={styles.main}>
         <input
           type="checkbox"
           checked={interventie.efectuata}
           onChange={() => onToggle(interventie.id)}
+          aria-label={`Marchează ${interventie.titlu} ca efectuată`}
           data-testid="item-toggle"
         />
         <div>
-          <h3 data-testid="item-title">{interventie.titlu}</h3>
+          <Link
+            to={`/interventii/${interventie.id}`}
+            className={styles.title}
+            data-testid="item-link"
+          >
+            {interventie.titlu}
+          </Link>
           <span className={`badge badge-${interventie.tip}`}>
             {ETICHETE_TIP[interventie.tip]}
           </span>
-          <p className="meta">
+          <p className={styles.meta}>
             {interventie.masina} · {formatData(interventie.data)} ·{" "}
             {formatNumar(interventie.km)} km · {formatNumar(interventie.cost)} lei
           </p>
         </div>
-      </label>
+      </div>
 
-      <div className="card-actions">
-        <span className="status">
+      <div className={styles.actions}>
+        <span className={styles.status}>
           {interventie.efectuata ? "Efectuată" : "Programată"}
         </span>
         <button

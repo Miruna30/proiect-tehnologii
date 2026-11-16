@@ -1,12 +1,6 @@
 // Regulile de validare ale unei intervenții (aceleași ca în Etapa 2).
 // Funcție pură: primește datele și întoarce mesajul de eroare sau "".
-
-export const TIPURI = [
-  { value: "revizie", label: "Revizie" },
-  { value: "reparatie", label: "Reparație" },
-  { value: "diagnoza", label: "Diagnoză" },
-  { value: "inspectie", label: "Inspecție" },
-];
+import { TIPURI } from "./constants.js";
 
 export const TITLU_MAX = 100;
 export const MASINA_MAX = 60;

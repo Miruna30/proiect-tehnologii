@@ -1,0 +1,142 @@
+/* detaliul în stânga, istoricul mașinii în dreapta */
+.layout {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.back:hover { text-decoration: underline; }
+
+.title {
+  font-size: clamp(1.8rem, 4vw, 2.6rem) !important;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.done {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+/* starea, ca o etichetă conturată */
+.stare {
+  padding: 1px 10px;
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  color: var(--accent-text);
+  font-family: var(--font-titlu);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.efectuata {
+  border-color: var(--efectuata);
+  color: var(--efectuata);
+}
+
+.cand {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* câmpurile: etichetă în stânga, valoare în dreapta */
+.fields {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 10px 24px;
+  margin: 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.fields dt {
+  font-family: var(--font-titlu);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+
+.fields dd {
+  margin: 0;
+  font-weight: 500;
+}
+
+.rezumat {
+  margin: -4px 0 16px;
+  color: var(--muted);
+}
+
+/* istoricul, ca o linie a timpului cu puncte portocalii */
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 18px;
+  border-left: 2px solid var(--border);
+}
+
+.pas {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 16px 14px;
+}
+
+.pas::before {
+  content: "";
+  position: absolute;
+  left: -25px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--card);
+  border: 2px solid var(--accent);
+}
+
+.curent::before { background: var(--accent); }
+
+.pasData {
+  font-family: var(--font-titlu);
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--accent-text);
+}
+
+.pasTitlu {
+  font-weight: 600;
+  color: var(--text);
+}
+
+a.pasTitlu { text-decoration: none; }
+a.pasTitlu:hover { color: var(--accent-text); text-decoration: underline; }
+
+.curent .pasTitlu { color: var(--muted); font-style: italic; }
+
+.pasMeta {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 800px) {
+  .layout { grid-template-columns: 1fr; }
+}
