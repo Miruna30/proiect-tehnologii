@@ -1,94 +1,163 @@
-/* AutoJurnal: stilurile din Etapa 1, reutilizate integral */
+/* AutoJurnal: stil de atelier auto (antracit + portocaliu).
+   Fonturile (Barlow Condensed, Barlow, Montserrat) se încarcă din index.html. */
 
 * { box-sizing: border-box; }
 
-/* 4.1 Variabilele de culoare: toate culorile sunt definite doar aici */
+/* Variabilele de culoare: toate culorile sunt definite doar aici */
 :root {
-  --bg: #f3f5f8;             /* fundalul paginii */
-  --card: #ffffff;           /* fundalul panourilor */
-  --text: #1c2430;
-  --muted: #6b7280;
-  --accent: #1f4fd1;         /* albastru „service” */
-  --accent-dark: #173c9f;
-  --accent-soft: #e6edfd;
-  --border: #e3e7ee;
-  --on-accent: #ffffff;      /* textul de pe fundalul de accent */
-  --shadow: 0 1px 3px rgba(16, 24, 40, 0.08);
+  --font-titlu: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --font-text: "Barlow", system-ui, sans-serif;
+  --font-logo: "Montserrat", system-ui, sans-serif;
+
+  --bg: #f3f1ed;             /* fundalul paginii, cald */
+  --card: #ffffff;
+  --text: #141514;
+  --muted: #676a67;
+  --accent: #eeaa45;         /* portocaliul principal */
+  --accent-dark: #d8922c;
+  --accent-text: #a5661a;    /* portocaliu mai închis, lizibil pe alb */
+  --accent-soft: #fbf0de;
+  --border: #e4e0d8;
+  --on-accent: #141514;      /* text închis pe portocaliu */
+  --shadow: 0 2px 10px rgba(20, 21, 20, 0.07);
+
+  /* antetul rămâne închis în ambele teme */
+  --header-bg: #141514;
+  --header-bg-2: #262826;
+  --header-text: #ffffff;
+  --header-muted: #c9cbc9;
 
   /* câte o culoare pentru fiecare tip de intervenție */
-  --revizie: #15803d;
-  --reparatie: #c2410c;
-  --diagnoza: #a16207;
-  --inspectie: #6d28d9;
+  --revizie: #3d8b52;
+  --reparatie: #c4553b;
+  --diagnoza: #3f76b5;
+  --inspectie: #8566c0;
+  --on-badge: #ffffff;
 
   /* culorile stărilor */
-  --programata: #1f4fd1;
-  --efectuata: #15803d;
-  --danger: #dc2626;
-  --error-bg: #fef2f2;       /* Etapa 6: mesajele de eroare */
-  --error-border: #fecaca;
+  --programata: #eeaa45;
+  --efectuata: #3d8b52;
+  --danger: #d6453a;
+  --error-bg: #fdf0ee;
+  --error-border: #f3c4bd;
 }
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font-text);
+  font-size: 1.05rem;
   background: var(--bg);
   color: var(--text);
   line-height: 1.5;
 }
 
-/* 4.2 Antetul */
+h1, h2, h3 {
+  font-family: var(--font-titlu);
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+/* Antetul: bandă portocalie sus, fundal antracit, titlu mare cu majuscule */
 .app-header {
-  background: var(--accent);
-  color: var(--on-accent);
+  position: relative;
+  background: linear-gradient(160deg, var(--header-bg-2), var(--header-bg) 70%);
+  color: var(--header-text);
   text-align: center;
-  padding: 32px 16px 28px;
+  padding: 44px 16px 36px;
+  border-top: 10px solid var(--accent);
 }
 
 .app-header h1 {
-  margin: 0 0 4px;
-  font-size: 2rem;
-  letter-spacing: 0.5px;
+  margin: 0 0 6px;
+  font-family: var(--font-titlu);
+  font-size: clamp(2.6rem, 6vw, 4rem);
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.app-header p { margin: 4px 0; }
+.app-header p {
+  margin: 6px 0;
+  color: var(--header-muted);
+}
 
+/* contorul arată ca eticheta conturată portocaliu */
 .app-count {
   display: inline-block;
-  margin-top: 10px !important;
-  padding: 4px 14px;
-  border-radius: 999px;
-  background: var(--accent-dark);
+  margin-top: 14px !important;
+  padding: 6px 16px;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  background: rgba(238, 170, 69, 0.08);
+  color: var(--accent) !important;
+  font-family: var(--font-titlu);
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* statistica arată ca o casetă cu bară portocalie în stânga */
+.app-stats {
+  display: inline-block;
+  margin-top: 14px !important;
+  padding: 10px 18px;
+  border-left: 4px solid var(--accent);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--header-text) !important;
   font-weight: 600;
 }
 
-/* 4.3 Cele două coloane (Grid) */
+.theme-toggle {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  padding: 6px 14px;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--header-text);
+  font-family: var(--font-logo);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.theme-toggle:hover {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+/* Cele două coloane: formularul în stânga, lista în dreapta */
 .container {
-  max-width: 1040px;
-  margin: 24px auto;
+  max-width: 1100px;
+  margin: 32px auto;
   padding: 0 16px;
   display: grid;
-  /* Etapa 7: formularul în stânga, lista în dreapta */
   grid-template-columns: 1fr 2fr;
   gap: 24px;
   align-items: start;
 }
 
-/* 4.4 Panourile */
+/* Panourile */
 .panel {
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 20px;
+  border-top: 4px solid var(--accent);
+  border-radius: 6px;
+  padding: 22px;
   box-shadow: var(--shadow);
 }
 
 .panel h2 {
   margin-top: 0;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
+  text-transform: uppercase;
 }
 
-/* 4.5 Formularul (Flexbox, pe verticală) */
+/* Formularul */
 .interventie-form {
   display: flex;
   flex-direction: column;
@@ -99,11 +168,13 @@ body {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  font-family: var(--font-titlu);
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
 }
 
-/* două câmpuri scurte pe același rând */
 .form-row {
   display: flex;
   gap: 12px;
@@ -113,22 +184,32 @@ body {
 
 .interventie-form input,
 .interventie-form select {
-  font: inherit;
+  font-family: var(--font-text);
+  font-size: 1rem;
   font-weight: 400;
-  padding: 9px 10px;
+  text-transform: none;
+  letter-spacing: normal;
+  padding: 10px 12px;
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 4px;
   background: var(--card);
   color: var(--text);
   width: 100%;
+  transition: border-color 0.15s;
 }
 
+.interventie-form input:focus,
+.interventie-form select:focus { border-color: var(--accent); }
+
 .interventie-form button {
-  font: inherit;
-  font-weight: 600;
-  padding: 10px 14px;
+  font-family: var(--font-titlu);
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 12px 14px;
   border: none;
-  border-radius: 8px;
+  border-radius: 4px;
   background: var(--accent);
   color: var(--on-accent);
   cursor: pointer;
@@ -137,7 +218,16 @@ body {
 
 .interventie-form button:hover { background: var(--accent-dark); }
 
-/* 4.6 Lista și cardul (Flexbox) */
+.interventie-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.interventie-form input[aria-invalid="true"] { border-color: var(--danger); }
+
+.interventie-form .error { margin: 0; }
+
+/* Lista și cardul */
 .interventie-list {
   list-style: none;
   padding: 0;
@@ -155,7 +245,8 @@ body {
   padding: 14px 16px;
   border: 1px solid var(--border);
   border-left: 4px solid var(--programata);
-  border-radius: 10px;
+  border-radius: 6px;
+  background: var(--card);
   transition: border-color 0.15s, background 0.15s;
 }
 
@@ -166,30 +257,36 @@ body {
 
 .interventie-card h3 {
   margin: 0 0 6px;
-  font-size: 1.05rem;
+  font-size: 1.3rem;
 }
 
 .meta {
   margin: 6px 0 0;
   color: var(--muted);
-  font-size: 0.88rem;
+  font-size: 0.95rem;
 }
 
 .status {
   flex-shrink: 0;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--programata);
+  font-family: var(--font-titlu);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent-text);
 }
 
-/* 4.7 Etichetele colorate */
+/* Etichetele colorate */
 .badge {
   display: inline-block;
   padding: 2px 10px;
-  border-radius: 999px;
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--on-accent);
+  border-radius: 3px;
+  font-family: var(--font-titlu);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--on-badge);
 }
 
 .badge-revizie { background: var(--revizie); }
@@ -197,7 +294,7 @@ body {
 .badge-diagnoza { background: var(--diagnoza); }
 .badge-inspectie { background: var(--inspectie); }
 
-/* 4.8 Intervenția efectuată: titlul tăiat și gri */
+/* Intervenția efectuată: titlul tăiat și gri */
 .interventie-card.done,
 .interventie-card.done:hover { border-left-color: var(--efectuata); }
 
@@ -208,73 +305,7 @@ body {
 
 .interventie-card.done .status { color: var(--efectuata); }
 
-/* mesajul pentru lista goală (folosit din Etapa 4) */
-.empty {
-  color: var(--muted);
-  text-align: center;
-  padding: 24px 0;
-}
-
-/* Subsolul */
-.app-footer {
-  text-align: center;
-  color: var(--muted);
-  font-size: 0.85rem;
-  padding: 16px 0 32px;
-}
-
-/* Pasul 5: focus vizibil la navigarea cu tastatura */
-:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
-
-/* Pasul 5: tema întunecată redefinește doar variabilele */
-/* Etapa 5: tema sistemului, dacă utilizatorul nu a ales explicit tema luminoasă */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #0f141c;
-    --card: #182030;
-    --text: #e5e9f0;
-    --muted: #9aa4b2;
-    --accent: #3b6cf0;
-    --accent-dark: #2550c4;
-    --accent-soft: #1c2a47;
-    --border: #2a3447;
-    --shadow: none;
-    --programata: #7aa2ff;
-    --efectuata: #4ade80;
-    --error-bg: #3b1a1d;
-    --error-border: #7f2a2f;
-    color-scheme: dark;        /* controalele native (ex. calendarul) devin întunecate */
-  }
-}
-
-/* Etapa 5: tema aleasă din buton are prioritate față de cea a sistemului */
-:root[data-theme="dark"] {
-  --bg: #0f141c;
-  --card: #182030;
-  --text: #e5e9f0;
-  --muted: #9aa4b2;
-  --accent: #3b6cf0;
-  --accent-dark: #2550c4;
-  --accent-soft: #1c2a47;
-  --border: #2a3447;
-  --shadow: none;
-  --programata: #7aa2ff;
-  --efectuata: #4ade80;
-  --error-bg: #3b1a1d;
-  --error-border: #7f2a2f;
-  color-scheme: dark;
-}
-
-/* 4.9 Ecranele înguste: o singură coloană (regula stă la final) */
-@media (max-width: 700px) {
-  .container { grid-template-columns: 1fr; }
-  .interventie-card { align-items: flex-start; }
-}
-
-/* Etapa 5: checkbox, stare și buton de ștergere în card */
+/* Checkbox, stare și buton de ștergere */
 .interventie-main {
   display: flex;
   align-items: flex-start;
@@ -287,7 +318,7 @@ body {
 .interventie-main input[type="checkbox"] {
   width: 18px;
   height: 18px;
-  margin-top: 4px;
+  margin-top: 5px;
   accent-color: var(--accent);
   cursor: pointer;
   flex-shrink: 0;
@@ -304,73 +335,42 @@ body {
   border: 1px solid var(--danger);
   background: transparent;
   color: var(--danger);
-  border-radius: 8px;
+  border-radius: 4px;
   padding: 5px 12px;
-  font: inherit;
-  font-size: 0.85rem;
+  font-family: var(--font-titlu);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   cursor: pointer;
 }
 
-.btn-danger:hover { background: var(--danger); color: var(--on-accent); }
+.btn-danger:hover { background: var(--danger); color: var(--on-badge); }
 
-/* Etapa 5: statistica din antet și butonul de comutare a temei */
-.app-stats {
-  font-size: 0.9rem;
-  opacity: 0.9;
+/* Mesaje: listă goală, încărcare, eroare */
+.empty {
+  color: var(--muted);
+  text-align: center;
+  padding: 24px 0;
 }
 
-.app-header { position: relative; }
-
-.theme-toggle {
-  position: absolute;
-  top: 12px;
-  right: 16px;
-  padding: 6px 12px;
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  border-radius: 8px;
-  background: transparent;
-  color: var(--on-accent);
-  font: inherit;
-  font-size: 0.9rem;
-  cursor: pointer;
-}
-
-.theme-toggle:hover { background: rgba(255, 255, 255, 0.15); }
-
-@media (max-width: 700px) {
-  .app-header { padding-top: 56px; }
-}
-
-/* Etapa 6: stări de încărcare și de eroare */
 .info { color: var(--muted); }
 
 .error {
   color: var(--danger);
   background: var(--error-bg);
   border: 1px solid var(--error-border);
-  border-radius: 8px;
+  border-radius: 4px;
   padding: 10px 12px;
 }
 
-/* Etapa 7: buton dezactivat cât timp se trimite */
-.interventie-form button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-.interventie-form input[aria-invalid="true"] {
-  border-color: var(--danger);
-}
-
-.interventie-form .error { margin: 0; }
-
-/* Etapa 7: bara de filtre de deasupra listei */
+/* Bara de filtre */
 .filtre {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 10px;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
 .filtre-stare,
@@ -381,11 +381,14 @@ body {
 }
 
 .chip {
-  font: inherit;
-  font-size: 0.85rem;
-  padding: 5px 12px;
+  font-family: var(--font-titlu);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 5px 14px;
   border: 1px solid var(--border);
-  border-radius: 999px;
+  border-radius: 4px;
   background: transparent;
   color: var(--text);
   cursor: pointer;
@@ -401,11 +404,11 @@ body {
 
 .filtre select,
 .filtre input {
-  font: inherit;
-  font-size: 0.9rem;
-  padding: 5px 10px;
+  font-family: var(--font-text);
+  font-size: 0.95rem;
+  padding: 6px 10px;
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 4px;
   background: var(--card);
   color: var(--text);
 }
@@ -418,4 +421,66 @@ body {
   overflow: hidden;
   clip: rect(0 0 0 0);
   white-space: nowrap;
+}
+
+/* Subsolul */
+.app-footer {
+  text-align: center;
+  color: var(--muted);
+  font-family: var(--font-logo);
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 16px 0 32px;
+}
+
+/* Focus vizibil la navigarea cu tastatura */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Tema întunecată a sistemului, dacă utilizatorul nu a ales explicit tema luminoasă */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141514;
+    --card: #1e201e;
+    --text: #f2f2f0;
+    --muted: #a3a6a3;
+    --accent-soft: #2b261c;
+    --accent-text: #eeaa45;
+    --border: #323532;
+    --shadow: none;
+    --header-bg: #0d0e0d;
+    --header-bg-2: #1e201e;
+    --efectuata: #5cb874;
+    --error-bg: #3a1c19;
+    --error-border: #7a2f28;
+    color-scheme: dark;
+  }
+}
+
+/* Tema aleasă din buton are prioritate față de cea a sistemului */
+:root[data-theme="dark"] {
+  --bg: #141514;
+  --card: #1e201e;
+  --text: #f2f2f0;
+  --muted: #a3a6a3;
+  --accent-soft: #2b261c;
+  --accent-text: #eeaa45;
+  --border: #323532;
+  --shadow: none;
+  --header-bg: #0d0e0d;
+  --header-bg-2: #1e201e;
+  --efectuata: #5cb874;
+  --error-bg: #3a1c19;
+  --error-border: #7a2f28;
+  color-scheme: dark;
+}
+
+/* Ecranele înguste: o singură coloană (regula stă la final) */
+@media (max-width: 700px) {
+  .container { grid-template-columns: 1fr; }
+  .interventie-card { align-items: flex-start; }
+  .app-header { padding-top: 60px; }
 }
