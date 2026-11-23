@@ -69,6 +69,16 @@
       "data": "2026-01-25",
       "km": 61300,
       "cost": 540
+    },
+    {
+      "titlu": "Schimb ulei",
+      "tip": "revizie",
+      "masina": "VW golf 2007",
+      "data": "2027-01-08",
+      "km": 140000,
+      "cost": 5000,
+      "efectuata": false,
+      "id": 8
     }
   ]
 }

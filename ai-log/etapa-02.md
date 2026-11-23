@@ -4,7 +4,7 @@
 - Claude (claude.ai)
 
 ## Conversations
-- <share link> (data logic in plain JavaScript)
+- https://claude.ai/share/1c94be22-26aa-4c9c-b588-42ff49feb2f3
 
 ## Key requests
 

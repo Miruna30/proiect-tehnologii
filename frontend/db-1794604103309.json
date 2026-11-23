@@ -1,0 +1,74 @@
+{
+  "interventii": [
+    {
+      "id": 1,
+      "titlu": "Schimb ulei și filtre",
+      "efectuata": false,
+      "tip": "revizie",
+      "masina": "VW Golf 7 · B 77 MRP",
+      "data": "2026-12-05",
+      "km": 152000,
+      "cost": 650
+    },
+    {
+      "id": 2,
+      "titlu": "Înlocuire plăcuțe frână față",
+      "efectuata": true,
+      "tip": "reparatie",
+      "masina": "VW Golf 7 · B 77 MRP",
+      "data": "2026-10-14",
+      "km": 149800,
+      "cost": 420
+    },
+    {
+      "id": 3,
+      "titlu": "Inspecție tehnică periodică (ITP)",
+      "efectuata": false,
+      "tip": "inspectie",
+      "masina": "Dacia Logan · IF 12 ABC",
+      "data": "2027-01-20",
+      "km": 98000,
+      "cost": 180
+    },
+    {
+      "id": 4,
+      "titlu": "Diagnoză martor motor aprins",
+      "efectuata": true,
+      "tip": "diagnoza",
+      "masina": "Dacia Logan · IF 12 ABC",
+      "data": "2026-09-02",
+      "km": 96500,
+      "cost": 150
+    },
+    {
+      "id": 5,
+      "titlu": "Schimb kit distribuție",
+      "efectuata": false,
+      "tip": "reparatie",
+      "masina": "Dacia Logan · IF 12 ABC",
+      "data": "2027-03-10",
+      "km": 100000,
+      "cost": 1800
+    },
+    {
+      "id": 6,
+      "titlu": "Revizie anuală",
+      "efectuata": true,
+      "tip": "revizie",
+      "masina": "VW Golf 7 · B 77 MRP",
+      "data": "2026-03-18",
+      "km": 140200,
+      "cost": 900
+    },
+    {
+      "id": 7,
+      "titlu": "Înlocuire baterie",
+      "efectuata": true,
+      "tip": "reparatie",
+      "masina": "Toyota Yaris · B 210 YRS",
+      "data": "2026-01-25",
+      "km": 61300,
+      "cost": 540
+    }
+  ]
+}
